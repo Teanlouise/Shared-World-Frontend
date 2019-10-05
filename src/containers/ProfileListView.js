@@ -9,7 +9,7 @@ class ProfileList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/profile/')
+        axios.get('https://shared-world.appspot.com/api/profile/')
             .then(res => {
                 this.setState({
                     profile: res.data

@@ -10,7 +10,7 @@ class PostList extends React.Component {
 
     // This needs to be changed to be the selected posts
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/post/')
+        axios.get('https://shared-world.appspot.com/api/post/')
             .then(res => {
                 this.setState({
                     post: res.data

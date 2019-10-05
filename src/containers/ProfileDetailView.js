@@ -118,7 +118,7 @@ class ProfileDetail extends React.Component {
   componentDidMount() {
     const profileUSERNAME= this.props.match.params.profileUSERNAME;
 
-    axios.get(`http://127.0.0.1:8000/api/post/user/${profileUSERNAME}`)     
+    axios.get(`https://shared-world.appspot.com/api/post/user/${profileUSERNAME}`)     
     .then ( res => {
         this.setState({
           profile: res.data

@@ -16,7 +16,7 @@ class Home extends React.Component {
   }
   
   componentDidMount() {
-    axios.get('http://127.0.0.1:8000/api/country/')
+    axios.get('https://shared-world.appspot.com/api/country/')
       .then(res => {
         this.setState({
           country: res.data

@@ -13,7 +13,7 @@ class PostDetail extends React.Component {
 
     componentDidMount() {
         const postID = this.props.match.params.postID;
-        axios.get(`http://127.0.0.1:8000/api/post/${postID}`)
+        axios.get(`https://shared-world.appspot.com/api/post/${postID}`)
             .then(res => {
                 this.setState({
                     post: res.data
@@ -23,7 +23,7 @@ class PostDetail extends React.Component {
 
     handleDelete = (event) => {
         const postID = this.props.match.params.postID;
-        axios.delete(`http://127.0.0.1:8000/api/post/${postID}`)
+        axios.delete(`https://shared-world.appspot.com/api/post/${postID}`)
     }
 
     render() {
