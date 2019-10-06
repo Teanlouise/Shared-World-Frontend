@@ -33,7 +33,7 @@ class CustomForm extends React.Component {
                 <Form onSubmit={(event) => this.handleFormSubmit(
                     event,
                     this.props.requestType,
-                    this.props.articleID)}>
+                    this.props.postID)}>
                     <Form.Item label="Title" >
                         <Input name="title" placeholder="Put a title here" />
                     </Form.Item>

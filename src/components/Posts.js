@@ -25,9 +25,9 @@ const Posts = (props) => {
               }
           >
             <Meta                
-              avatar={<Avatar src={item.author.user_image}/>}
+              // avatar={<Avatar src={item.author && item.author.user_image}/>}
               title={<a href={`/post/${item.id}`}>{item.title}</a>}
-              description={item.author.username}
+              description={item.description}
             />
           </Card>
         </List.Item>   
