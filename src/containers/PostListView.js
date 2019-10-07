@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Posts from '../components/Posts';
+import ndjsonStream from 'can-ndjson-stream'
 
 class PostList extends React.Component {
 
@@ -9,16 +10,23 @@ class PostList extends React.Component {
     }
 
     // This needs to be changed to be the selected posts
-    componentDidMount() {
-        //axios.get('https://shared-world.appspot.com/api/post') 
-        const user = 1
-        const country = 'ZZ'       
-        axios.get(`https://shared-world-dataproc.storage.googleapis.com/order/${user}/${country}/result.json`)
-            .then(res => {
-                this.setState({
-                    post: res.data
-                });
-            })
+    async componentDidMount() {
+      //axios.get('https://shared-world.appspot.com/api/post') 
+      const uid = this.props.match.params.user;
+      const countryID = this.props.match.params.country;
+      const res = await fetch(`https://shared-world-dataproc.storage.googleapis.com/order/${uid}/${countryID}/result.json`)
+      const exampleReader = ndjsonStream(res.body).getReader();
+
+      let result;                
+      while (!result || !result.done) {
+        result = await exampleReader.read();
+        if (result.value) {
+          this.setState({
+            post: this.state.post.concat(result.value)
+          })
+        }
+      //console.log(result.done, result.value); //result.value is one line of your NDJSON data
+      }
     }
 
     render() {
