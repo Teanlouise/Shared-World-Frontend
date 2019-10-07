@@ -1,16 +1,11 @@
-import { Menu, Dropdown, Icon, message, List, Card, Avatar, Select, Button, Row, Col} from 'antd';
-import React, {Component} from 'react';
+import { message, Select, Button, Row, Col} from 'antd';
+import React from 'react';
 import axios from 'axios';
-import { OmitProps } from 'antd/lib/transfer/renderListBody';
-
-// const { Meta } = Card;
-const onClick = ({ key }) => {
-    message.info(`Click on item ${key}`);
-  };
 
 class Home extends React.Component {
 
   state = {
+    selected: "ZZ",
     country: []
   }
   
@@ -23,48 +18,50 @@ class Home extends React.Component {
       })
   }
   
+  onClick = ({ key }) => {
+    this.setState({
+      selected: key
+    });
+    console.log("test")
+    message.info(`Click on item ${key}`);
+  };
+  
   render() {         
     const { country } = this.state;
-    const user = 2;
+    const user = 1;
 
     // Get list of countries
-    let countryList = country.length > 0
-    && country.map((item, i) => {
+    let countryList = country.length > 0 && country.map((item, i) => {
       return (
-        <option 
-          key={item.country} 
-          value={item.country} 
-          onClick={onClick}
+        <Select.Option 
+          key={item.country}
+          value={item.country_id} 
+          onClick={this.onClick}
         >
           {item.country}
-        </option>
+        </Select.Option>
       )
     }, this);
 
     // Show list of countries in dropdown menu
-  return (
-
-  <Row>
-  <Col span={18} push={6}>
-
-  </Col>
-
-    <Col span={6} pull={18}>
-      <div>
-        <Select
-          style={{ width: 240 }}
-          placeholder="Select a country"
-        >
-            {countryList}
-        </Select>
-        <br />
-        <br />
-        <Button type="primary" htmlType="submit" block>{<a href={`post/${user}/${country}`}>SEARCH</a>}</Button>        
-      </div>
-    </Col>
-</Row>    
-
-
+    return (
+      <Row>
+        <Col span={18} push={6}>
+        </Col>
+        <Col span={6} pull={18}>
+          <div>
+            <Select
+              style={{ width: 240 }}
+              placeholder="Select a country"
+            >
+              {countryList}
+            </Select>
+            <br />
+            <br />
+            <Button type="primary" htmlType="submit" block>{<a href={`post/${user}/${this.state.selected}`}>SEARCH</a>}</Button>        
+          </div>
+        </Col>
+      </Row>
     );
   }
 }
