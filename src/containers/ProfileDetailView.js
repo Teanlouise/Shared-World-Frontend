@@ -112,28 +112,29 @@ const { Meta } = Card;
 class ProfileDetail extends React.Component {
 
   state = {
-    profile: []
+    posts: []
   }
 
   componentDidMount() {
-    const profileUSERNAME= this.props.match.params.profileUSERNAME;
+    const userid = this.props.match.params.profileUserId;
 
-    axios.get(`https://shared-world.appspot.com/api/post/user/${profileUSERNAME}`)     
+    axios.get(`https://shared-world.appspot.com/api/post/user/${userid}`)
     .then ( res => {
+      console.log("asdf")
+      console.log(res)
         this.setState({
-          profile: res.data
+          posts: res.data
         });
-      })    
+      })
   }
 
   render() {
-      const current = this.state.profile;
-        return (
-<div>
-   <Col span={18} push={6}>
-     <Posts data={this.state.post} />                
-   </Col> 
-</div>
+    return (
+      <div>
+        <Col span={18} push={6}>
+          <Posts data={this.state.posts} />
+        </Col>
+      </div>
     )
   }
 }

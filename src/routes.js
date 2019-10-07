@@ -17,7 +17,7 @@ const BaseRouter = () => (
         <Route exact path='/post/:user/:country' component={PostList} />
         <Route exact path='/post/:postID' component={PostDetail} />
         <Route exact path='/create' component={PostCreate} />
-        <Route exact path='/user/:profileUSER' component={ProfileDetail} />
+        <Route exact path='/user/:profileUserId' component={ProfileDetail} />
     </div>
 
 );
