@@ -6,7 +6,6 @@ import { OmitProps } from 'antd/lib/transfer/renderListBody';
 // const { Meta } = Card;
 const onClick = ({ key }) => {
     message.info(`Click on item ${key}`);
-    // SENT POST REQUEST TO DATAPROC
   };
 
 class Home extends React.Component {
@@ -26,31 +25,32 @@ class Home extends React.Component {
   
   render() {         
     const { country } = this.state;
+    const user = 2;
 
-        // Get list of countries
-        let countryList = country.length > 0
-        && country.map((item, i) => {
-          return (
-            <option 
-              key={item.country} 
-              value={item.country} 
-              onClick={onClick}
-            >
-              {item.country}
-            </option>
-          )
-        }, this);
+    // Get list of countries
+    let countryList = country.length > 0
+    && country.map((item, i) => {
+      return (
+        <option 
+          key={item.country} 
+          value={item.country} 
+          onClick={onClick}
+        >
+          {item.country}
+        </option>
+      )
+    }, this);
 
     // Show list of countries in dropdown menu
-    return (
+  return (
 
-    <Row>
+  <Row>
   <Col span={18} push={6}>
 
   </Col>
 
     <Col span={6} pull={18}>
-    <div>
+      <div>
         <Select
           style={{ width: 240 }}
           placeholder="Select a country"
@@ -59,7 +59,7 @@ class Home extends React.Component {
         </Select>
         <br />
         <br />
-        <Button type="primary" htmlType="submit" block>{<a href={'post/'}>SEARCH</a>}</Button>        
+        <Button type="primary" htmlType="submit" block>{<a href={`post/${user}/${country}`}>SEARCH</a>}</Button>        
       </div>
     </Col>
 </Row>    

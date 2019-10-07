@@ -10,8 +10,10 @@ class PostList extends React.Component {
 
     // This needs to be changed to be the selected posts
     componentDidMount() {
-        //axios.get('https://shared-world.appspot.com/api/post')        
-        axios.get('https://shared-world-media.storage.googleapis.com/order.json')
+        //axios.get('https://shared-world.appspot.com/api/post') 
+        const user = 2
+        const country = AU       
+        axios.get(`https://shared-world-dataproc.storage.googleapis.com/order/${user}/${country}/result.json`)
             .then(res => {
                 this.setState({
                     post: res.data
