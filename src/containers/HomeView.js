@@ -35,10 +35,10 @@ class Home extends React.Component {
       return (
         <Select.Option 
           key={item.country}
-          value={item.country_id} 
+          value={item.country} 
           onClick={this.onClick}
         >
-          {item.country}
+          {item.country_name}
         </Select.Option>
       )
     }, this);

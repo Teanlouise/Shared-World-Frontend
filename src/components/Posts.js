@@ -20,7 +20,7 @@ const Posts = (props) => {
               cover={
                 <img 
                   style={{ height: 250, objectFit: 'cover' }}
-                  src={item.image}
+                  src={`https://shared-world-media.storage.googleapis.com/post_pics/${item.image}`}
                 />
               }
           >
