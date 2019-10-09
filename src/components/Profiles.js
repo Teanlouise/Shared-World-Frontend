@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Avatar, Icon, Card} from 'antd';
+import { List, Card} from 'antd';
 
 const { Meta } = Card;
 
@@ -16,12 +16,7 @@ const Profiles = (props) => {
         <List.Item>
          <Card 
             style={{ width: 300, textAlign: 'center' }}
-            cover={<img src={item.user_image} />}
-                // actions={[
-                //   <Icon type="setting" key="setting" />,
-                //   <Icon type="edit" key="edit" />,
-                //   <Icon type="ellipsis" key="ellipsis" />,
-                // ]}
+            cover={<img src={item.user_image} alt="user_image" />}
           >
           <Meta                  
             title={<a href={`/user/${item.user}`}>{item.username}</a>}

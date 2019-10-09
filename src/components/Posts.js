@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Avatar, Icon, Card} from 'antd';
+import { List, Card} from 'antd';
 
 const { Meta } = Card;
 
@@ -15,12 +15,13 @@ const Posts = (props) => {
       renderItem={item => ( 
         <List.Item>
           <Card 
-            //hoverable={true}
+            hoverable
             style= {{ width: 300, textAlign: 'center' }}
               cover={
                 <img 
                   style={{ height: 250, objectFit: 'cover' }}
                   src={`https://shared-world-media.storage.googleapis.com/post_pics/${item.image}`}
+                  alt="post_image"
                 />
               }
           >

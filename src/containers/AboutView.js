@@ -7,7 +7,7 @@ class About extends React.Component {
     render() {
         return (
             <Layout className="layout">
-                <img src={AboutImage}/>
+                <img src={AboutImage} alt="about"/>
             </Layout>            
         )
     }

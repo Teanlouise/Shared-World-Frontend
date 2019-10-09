@@ -1,15 +1,17 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
-import { Link } from 'react-router-dom';
-import LogoImage from '../logo.png'
+import { Link, withRouter} from 'react-router-dom';
+import LogoImage from '../logo.png';
+import * as actions from '../store/actions/auth'; 
+import { connect } from 'react-redux';
 
 const { Header, Content, Footer } = Layout;
 
-const CustomLayout = (props) => {
-    
+class CustomLayout extends React.Component {
+    render() {
     return (
         <Layout className="layout">
-            <img src={LogoImage}/>
+            <img src={LogoImage} alt="logo"/>
 
             <Header>
                 <div className="logo" />   
@@ -19,6 +21,13 @@ const CustomLayout = (props) => {
                         defaultSelectedKeys={['1']}
                         style={{ padding: '10px 40px', textAlign: 'center' }}
                     >
+{
+    this.props.isAuthenticated ?
+    <Menu.Item key="4" onClick={this.props.logout}>Logout</Menu.Item>
+    :    
+    <Menu.Item key="4"><Link to="/login">Login</Link></Menu.Item>
+}
+
                         <Menu.Item key="1"><Link to="/">Start</Link></Menu.Item>
                         <Menu.Item key="2"><Link to="/about">About</Link></Menu.Item>
                         <Menu.Item key="3"><Link to="/profile">Profile</Link></Menu.Item>
@@ -27,7 +36,7 @@ const CustomLayout = (props) => {
 
             <Content style={{ padding: '0 10px' }}>
                 <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
-                    {props.children}
+                    {this.props.children}
                 </div>
             </Content>
 
@@ -36,5 +45,13 @@ const CustomLayout = (props) => {
         </Layout>
     );
 }
+}
 
-export default CustomLayout;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        logout: () => dispatch(actions.logout())
+    }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(CustomLayout));

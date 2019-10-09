@@ -34,9 +34,6 @@ class PostDetail extends React.Component {
         const user_image = author && author.user_image;
         const user = author && author.user;
         const user_bio = author && author.user_bio;
-        //const title = current.title;
-       // const content = current.content;
-        //const description = current.description;
 
         return (
             <div>
@@ -48,21 +45,21 @@ class PostDetail extends React.Component {
                     <p> {current.content} </p>
                 </Card>
         
-                        {/* <CustomForm
+                         <CustomForm
                             requestType="put"
                             postID={this.props.match.params.postID}
                             btnText="Update"
                         />
                         <form onSubmit={this.handleDelete}>
                             <Button type="danger" htmlType="submit">Delete</Button>
-                        </form> */}        
+                        </form>      
               </Col>
 
             {/* Author Profile */}
                 <Col span={6} pull={18}>
                     <Card                  
                         style={{ width: 300, height: 300, textAlign: 'center' }}
-                        cover={<img src={user_image}/>}
+                        cover={<img src={user_image} alt="user_image"/>}
                     >
                       <Meta                  
                           title={<a href={`/user/${user}`}>{username}</a>}
