@@ -18,8 +18,8 @@ class ProfileDetail extends React.Component {
     const userID = this.props.match.params.profileUserID;
   
       axios.all([
-        axios.get(`http://127.0.0.1:8000/api/profile/${userID}`),
-        axios.get(`http://127.0.0.1:8000/api/post/user/${userID}`)
+        axios.get(`http://shared-world.appspot.com/api/profile/${userID}`),
+        axios.get(`http://shared-world.appspot.com/api/post/user/${userID}`)
       ])    
       .then(axios.spread((profile, post) => {
           this.setState({

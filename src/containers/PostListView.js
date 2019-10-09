@@ -1,5 +1,6 @@
 import React from 'react';
 import Posts from '../components/Posts';
+import ndjsonStream from 'can-ndjson-stream';
 
 class PostList extends React.Component {
 
