@@ -129,7 +129,7 @@ import { Form, Input, Icon, Button} from 'antd';
             Or
             <NavLink 
               style={{marginRight: '10px'}} 
-              to='/Login'>  Login
+              to='/'>  Login
             </NavLink>
           </Form.Item>
         </Form>

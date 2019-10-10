@@ -16,11 +16,11 @@ const Posts = (props) => {
         <List.Item>
           <Card 
             hoverable
-            style= {{ width: 300, textAlign: 'center' }}
+            style= {{ width: 400, height: 400, textAlign: 'center' }}
               cover={
                 <img 
                   style={{ height: 250, objectFit: 'cover' }}
-                  src={`https://shared-world-media.storage.googleapis.com/post_pics/${item.image}`}
+                  src={`https://shared-world-media.storage.googleapis.com/${item.image}`}
                   alt="post_image"
                 />
               }

@@ -55,10 +55,10 @@ class PostDetail extends React.Component {
                     </Card.Grid>               
                     
                     <Card.Grid style={{width: '100%'}} bordered={true}> 
-                        <Col span={6} pull={0}>
+                        <Col span={16} pull={0}>
                             <p> {current.content} </p>                        
                         </Col>
-                        <Col span={12} push={6}>
+                        <Col span={4} push={1}>
                             <img src={current.image} alt="post_image"/>
                         </Col> 
                     </Card.Grid> 

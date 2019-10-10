@@ -16,7 +16,7 @@ const ProfilePosts = (props) => {
         <List.Item>
           <Card 
             hoverable
-            style= {{ width: 300, textAlign: 'center' }}
+            style= {{ width: 300, height: 450, textAlign: 'center' }}
               cover={
                 <img 
                   style={{ height: 250, objectFit: 'cover' }}
