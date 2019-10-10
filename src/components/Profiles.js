@@ -15,8 +15,8 @@ const Profiles = (props) => {
       renderItem={item => ( 
         <List.Item>
          <Card 
-            style={{ width: 300, textAlign: 'center' }}
-            cover={<img src={item.user_image} alt="user_image" />}
+            style={{ width: 300, height: 400, textAlign: 'center' }}
+            cover={<img style={{height: 250}} src={item.user_image} alt="user_image" />}
           >
           <Meta                  
             title={<a href={`/user/${item.user}`}>{item.username}</a>}
