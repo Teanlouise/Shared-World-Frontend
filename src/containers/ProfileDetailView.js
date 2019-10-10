@@ -43,13 +43,16 @@ class ProfileDetail extends React.Component {
       {/* Author Profile */}
         <Col span={6} pull={18}>
           <Card 
-            style={{ width: 300, textAlign: 'center' }}
+            style={{ width: 300,textAlign: 'center', border: '5px solid black' }}
             cover={ <img src={this.state.profile.user_image} alt="user_image"/> }
           >
-          <Meta                  
-            title={this.state.profile.username}
-            description={this.state.profile.user_bio}
-          />
+            <Meta                  
+              title={<h1> {this.state.profile.username} </h1>}
+              description=' '     
+            />
+            <p>{this.state.profile && this.state.profile.user_bio}</p>
+            <p>{this.state.profile.user_website}</p>
+            <p style={{fontStyle: 'italic'}}>Interests: {this.state.profile.user_interests && this.state.profile.user_interests[0]}, {this.state.profile.user_interests && this.state.profile.user_interests[1]}, {this.state.profile.user_interests && this.state.profile.user_interests[2]} </p>
           </Card>  
         </Col>
       </Row>
@@ -68,17 +71,3 @@ export default ProfileDetail;
 //       Authorization: newProps.token,
 //       Username: newProps.username
 //     }    
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -45,26 +45,23 @@ import { Form, Input, Icon, Button} from 'antd';
         form.validateFields(['confirm'], { force: true });
       }
       callback();
-    };
-  
+    };  
   
     render() {
       const { getFieldDecorator } = this.props.form; 
-
   
       return (
         <Form onSubmit={this.handleSubmit}>
             <Form.Item>
-                {getFieldDecorator('username', {
-                    rules: [{ required: true, message: 'Please input your username!' }],
-                })(
-                    <Input
-                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    placeholder="Username"
-                    />,
-                )}
+              {getFieldDecorator('username', {
+                rules: [{ required: true, message: 'Please input your username!' }],
+              })(
+                <Input
+                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  placeholder="Username"
+                  />,
+              )}
             </Form.Item>
-
 
             <Form.Item>
             {getFieldDecorator('email', {
@@ -80,8 +77,8 @@ import { Form, Input, Icon, Button} from 'antd';
               ],
             })(
             <Input 
-                prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                placeholder="Email"/>)}
+              prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              placeholder="Email"/>)}
           </Form.Item>
 
           <Form.Item>
@@ -95,10 +92,11 @@ import { Form, Input, Icon, Button} from 'antd';
                   validator: this.validateToNextPassword,
                 },
               ],
-            })(<Input
-                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                type="password"
-                placeholder="Password"/>)}
+            })(
+            <Input
+              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              type="password"
+              placeholder="Password"/>)}
           </Form.Item>
 
           <Form.Item>
@@ -112,45 +110,46 @@ import { Form, Input, Icon, Button} from 'antd';
                   validator: this.compareToFirstPassword,
                 },
               ],
-            })(<Input
-                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                type="password"
-                placeholder="Password"
-                onBlur={this.handleConfirmBlur} />)}
+            })(
+            <Input
+              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              type="password"
+              placeholder="Password"
+              onBlur={this.handleConfirmBlur} />)}
           </Form.Item>
           
           <Form.Item>
-          <Button type="primary" htmlType="submit" style={{marginRight: '10px'}}>
-                        Register
-        </Button>
-                    Or
-                    <NavLink 
-                    style={{marginRight: '10px'}} 
-                    to='/Login'>  Login
-                    </NavLink>
-
-
+            <Button 
+              type="primary" 
+              htmlType="submit" 
+              style={{marginRight: '10px'}}
+            >
+              Register
+            </Button>
+            Or
+            <NavLink 
+              style={{marginRight: '10px'}} 
+              to='/Login'>  Login
+            </NavLink>
           </Form.Item>
         </Form>
       );
     }
   }
   
-  const WrappedRegistrationForm = Form.create()(RegistrationForm);
-  const mapStateToProps = (state) => {
-    return{
-        loading: state.loading,
-        error: state.error
-    }
+const WrappedRegistrationForm = Form.create()(RegistrationForm);
+
+const mapStateToProps = (state) => {
+  return{
+    loading: state.loading,
+    error: state.error
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-        onAuth: (username, email, password1, password2) => dispatch(actions.authSignup(username, email, password1, password2))
-    }
+  return {
+    onAuth: (username, email, password1, password2) => dispatch(actions.authSignup(username, email, password1, password2))
+  }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WrappedRegistrationForm);
-
-  
-  
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedRegistrationForm);  

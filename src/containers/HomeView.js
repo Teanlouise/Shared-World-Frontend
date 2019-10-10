@@ -50,51 +50,102 @@ class Home extends React.Component {
     // Show list of countries in dropdown menu
     return (
       <Row>
-        <Col span={18} push={6}>
-        <Chart
-          //width={'500px'}
-          height={'600px'}
-          chartType="GeoChart"
-          //spreadSheetUrl="https://docs.google.com/spreadsheets/d/1sNbLvMuOM4Zcujlqw90At_S8a65QV9MQ7GWXB5ko-Tk/edit#gid=744431261"
-          data={[
-            ['Country', 'Popularity'],
-            ['Germany', 200],
-            ['United States', 300],
-            ['Brazil', 400],
-            ['Canada', 500],
-            ['France', 600],
-            ['Russia', 700],
-          ]}
-          mapsApiKey="AIzaSyDyKYoLZP3Cdy8D4haLEULA2HQzEO1zMHo"
-          //rootProps={{ 'data-testid': '1' }}
-        
-          options={{
-   // sizeAxis: { minValue: 0, maxValue: 100 },
-    colorAxis: { colors: ['#e7711c', '#4374e0'] }, // orange to blue
-    //datalessRegionColor: '#f8bbd0',
-    defaultColor: '#f5f5f5',
-  }}
-/>
-          
+        <Col 
+          span={18} push={6}
+          style={{padding: '10px'}}
+        >
+          <Chart
+            //width={'500px'}
+            height={'550px'}
+            chartType="GeoChart"
+            legend={{textAlign: 'center'}}
+            mapsApiKey="AIzaSyDyKYoLZP3Cdy8D4haLEULA2HQzEO1zMHo"
+            options={{    
+              colorAxis: { colors: ['#FF8C00', '#FF0000', '#FF00FF', '#8F00FF', '#002366'] }, // orange to blue
+              defaultColor: '#f5f5f5',
+              //datalessRegionColor: '#f8bbd0',              
+            }}
+            data={[
+              ['Country', '%'],         
+              ['Iceland', 648],
+              ['Malta', 486],
+              ['Croatia', 378],
+              ['Bahamas', 377],
+              ['Hong Kong', 377],
+              ['Seychelles', 365],
+              ['Austria', 355],
+              ['Maldives', 280],
+              ['Greece', 253],
+              ['Estonia', 246],
+              ['Ireland', 215],
+              ['Denmark', 204],
+              ['Spain', 176],
+              ['Georgia', 174],
+              ['Albania', 162],
+              ['Portugal', 150],
+              ['France', 130],
+              ['Norway', 118],
+              ['Italy', 96],
+              ['Fiji', 96],
+              ['New Zealand', 74],
+              ['Sweden', 70],
+              ['Namibia', 62],
+              ['Costa Rica', 60],
+              ['Canada', 57],
+              ['United Kingdom', 57],
+              ['Thailand', 51],
+              ['Turkey', 46],
+              ['Germany', 45],
+              ['Kazakstan', 23],
+              ['Australia', 36],
+              ['Cambodia', 35],
+              ['Chile', 35],
+              ['Mexico', 35],
+              ['United States', 23],
+              ['Japan', 23],
+              ['South Africa', 18],
+              ['Russia', 17],
+              ['Zimbabwe', 23],
+              ['Argentina', 15],
+              ['Mongolia', 23],
+              ['Philippines', 6],
+              ['Iran', 6],
+              ['Indonesia', 5],
+              ['China', 4],
+              ['Brazil', 3],
+              ['Nepal', 23],
+              ['Tanzania', 2],
+              ['Venezuala', 1],
+              ['India', 1],
+            ]} 
+          />
+          <h1 style={{marginLeft:'40px'}}>
+            Tourist-to-Resident Ratio
+          </h1>          
         </Col>
-        <Col span={6} pull={18}>
-          <div>
+
+        <Col 
+          span={6} pull={18}
+          style={{ padding:'100px', textAlign: 'center'}}
+        >
           <img center src={SelectCountryImage} alt="start"/>
-            <Select                     
-              style={{ width: 400 }}
-              placeholder="Select a country"
-            >
-              {countryList}
-            </Select>
-            <br />
-            <br />
-            <Button type="primary" htmlType="submit" block>{<a href={`post/${user}/${this.state.selected}`}>SEARCH</a>}</Button>        
-          </div>
+          <Select                     
+            style={{ width: 400 }}
+            placeholder="Select a country"
+          >
+            {countryList}
+          </Select>
+          <br />
+          <br />
+
+          <Button type="primary" htmlType="submit">
+            {<a href={`post/${user}/${this.state.selected}`}>SEARCH</a>}
+          </Button> 
         </Col>
+
       </Row>
     );
   }
 }
-
 
 export default Home;
