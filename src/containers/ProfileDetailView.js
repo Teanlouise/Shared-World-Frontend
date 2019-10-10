@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card } from 'antd';
 import { Row, Col} from 'antd';
 
-import Posts from '../components/Posts';
+import ProfilePosts from '../components/ProfilePosts';
 
 const { Meta } = Card;
 
@@ -38,7 +38,7 @@ class ProfileDetail extends React.Component {
       <Row>
       {/* List of Profile's Post */}
         <Col span={18} push={6}>
-          <Posts data={this.state.posts} />                
+          <ProfilePosts data={this.state.posts} />                
         </Col>
 
       {/* Author Profile */}
