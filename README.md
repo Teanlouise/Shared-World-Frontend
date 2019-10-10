@@ -9,8 +9,7 @@ Used 'antd' templates for quicker development and clear layout and VisualStudio 
     - (https://ant.design/)
     - (https://automationpanda.com/2018/02/08/django-projects-in-visual-studio-code/)
 
-# PAGES
-
+# Pages
 ## Login
 - Default page
 - Choose to login or register
