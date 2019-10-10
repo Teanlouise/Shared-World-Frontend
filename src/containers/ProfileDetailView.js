@@ -16,10 +16,11 @@ class ProfileDetail extends React.Component {
 
   componentDidMount() {
     const userID = this.props.match.params.profileUserID;
+    const userID2 = this.props.match.params.profileUserID -4;
   
       axios.all([
-        axios.get(`http://shared-world.appspot.com/api/profile/${userID}`),
-        axios.get(`http://shared-world.appspot.com/api/post/user/${userID}`)
+        axios.get(`https://shared-world.appspot.com/api/profile/${userID}`),
+        axios.get(`https://shared-world.appspot.com/api/post/user/${userID2}`)
       ])    
       .then(axios.spread((profile, post) => {
           this.setState({
