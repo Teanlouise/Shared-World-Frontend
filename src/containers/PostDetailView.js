@@ -81,7 +81,7 @@ class PostDetail extends React.Component {
                         cover={ <img src={user_image} alt="user_image"/> }
                     >
                         <Meta                  
-                        title={<h1> {username} </h1>}  
+                        title={<h1> {<a href={`/user/${user}`}>{username}</a>} </h1>}  
                         description=' '
                         />      
                         <p>{user_bio} </p>
