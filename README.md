@@ -1,4 +1,4 @@
-# **FRONTEND**
+![frontend_image](https://user-images.githubusercontent.com/19520346/69123617-9580e200-0aed-11ea-84a0-c59ead13f6b9.PNG)
 
 [Overview](https://teanlouise.github.io/shared-world)     |     [Develop](https://teanlouise.github.io/shared-world/develop)    |  [Deploy](https://teanlouise.github.io/shared-world/deploy)    |   [Data](https://teanlouise.github.io/shared-world-data)
 
@@ -6,7 +6,7 @@ This is the frontend implementation of the shared-world application. Connection 
 
 This is the first project I have built using React. Followed a [JustDjango Youtube tutorial](https://www.youtube.com/watch?v=uZgRbnIsgrA) to assist with the process.
 
-I used [AntDesisns](https://ant.design/) templates for quicker development and clear layout and [VisualStudio](https://automationpanda.com/2018/02/08/django-projects-in-visual-studio-code/) for coding.
+I used [AntDesigns](https://ant.design/) templates for quicker development and clear layout and [VisualStudio](https://automationpanda.com/2018/02/08/django-projects-in-visual-studio-code/) for coding.
 
 # Setup
 These are the steps I went through to start the project
