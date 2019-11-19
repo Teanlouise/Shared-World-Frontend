@@ -1,6 +1,6 @@
 ![frontend_image](https://user-images.githubusercontent.com/19520346/69123617-9580e200-0aed-11ea-84a0-c59ead13f6b9.PNG)
 
-[Overview](https://teanlouise.github.io/shared-world)     |     [Deploy](https://teanlouise.github.io/shared-world/deploy)    |  [Backend](https://teanlouise.github.io/shared-world-backend)    |   [Frontend](https://teanlouise.github.io/shared-world-frontend)    |   [Data](https://teanlouise.github.io/shared-world-data)
+[Overview](https://teanlouise.github.io/shared-world)     |     [Develop](https://teanlouise.github.io/shared-world/develop)    |  [Deploy](https://teanlouise.github.io/shared-world/deploy)    |   [Data](https://teanlouise.github.io/shared-world-data)
 
 This is the frontend implementation of the shared-world application. Connection with the Django backend is through axios to access rest API functionality. This application is deployed on Firebase with access to App Engine, Cloud Storage and GoogleMapsAPI.
 
