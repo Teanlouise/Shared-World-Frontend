@@ -1,4 +1,4 @@
-![frontend_image](https://user-images.githubusercontent.com/19520346/69123617-9580e200-0aed-11ea-84a0-c59ead13f6b9.PNG)
+# **FRONTEND**
 
 [Overview](https://teanlouise.github.io/shared-world)     |     [Develop](https://teanlouise.github.io/shared-world/develop)    |  [Deploy](https://teanlouise.github.io/shared-world/deploy)    |   [Data](https://teanlouise.github.io/shared-world-data)
 
