@@ -1,3 +1,5 @@
+![frontend_image](https://user-images.githubusercontent.com/19520346/69123617-9580e200-0aed-11ea-84a0-c59ead13f6b9.PNG)
+
 This is the frontend implementation of the shared-world application. Connection with the Django backend is through axios to access rest API functionality. This application is deployed on Firebase with access to App Engine, Cloud Storage and GoogleMapsAPI.
 
 This is the first project I have built using React. Followed a [JustDjango Youtube tutorial](https://www.youtube.com/watch?v=uZgRbnIsgrA) to assist with the process.
@@ -102,9 +104,3 @@ import 'antd/dist/antd.css'
 
 ### ProfileDetail
 - Shows the details of the selected profile in a card on the left and all the posts written by them on the right
-
-# Deploy
-- Originally to be deployed on app engine, however this was not the best option
-- Deployed on Google Firebase which is designed for frontend apps
-- Due to the api nature of this program and Django they could be deployed seperately
-- This structure provided greater effeciency and results then when running together locally
